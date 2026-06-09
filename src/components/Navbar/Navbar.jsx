@@ -51,7 +51,7 @@ function Navbar({ onHomeClick }) {
         <div className={`flex items-center justify-between h-16 rounded-full px-6 transition-all duration-300 ${scrolled ? 'bg-[#12121A]/95 light:bg-white/95 backdrop-blur-xl border border-white/10 light:border-gray-200/50 shadow-2xl light:shadow-sm' : 'bg-[#12121A]/80 light:bg-white/80 backdrop-blur-md border border-white/5 light:border-gray-200/50 shadow-xl light:shadow-sm'}`}>
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img src="/icon.png" alt="BugRicer Notify Logo" className="w-8 h-8 rounded-lg object-contain shadow-[0_0_15px_rgba(37,99,235,0.6)]" />
+            <img src="/icon.png" alt="BugRicer Notify Logo" fetchPriority="high" className="w-8 h-8 rounded-lg object-contain shadow-[0_0_15px_rgba(37,99,235,0.6)]" />
             <a href="#home" onClick={onHomeClick} className="flex items-center text-lg font-bold tracking-tight">
               <span className="text-white light:text-gray-900">BugRicer</span>
               <span className="text-blue-500 ml-1">Notify</span>

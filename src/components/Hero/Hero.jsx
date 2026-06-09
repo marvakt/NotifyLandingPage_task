@@ -8,7 +8,7 @@ function Hero() {
 
         {/* Center Logo */}
         <div className="animate-fade-in transition-transform duration-300 hover:scale-105">
-          <img src="/icon.png" alt="BugRicer Notify Logo" className="animate-float w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-8 rounded-[16px] sm:rounded-[20px] object-cover shadow-[0_0_40px_rgba(37,99,235,0.5)] ring-1 ring-white/10" />
+          <img src="/icon.png" alt="BugRicer Notify Logo" fetchPriority="high" className="animate-float w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-8 rounded-[16px] sm:rounded-[20px] object-cover shadow-[0_0_40px_rgba(37,99,235,0.5)] ring-1 ring-white/10" />
         </div>
 
         {/* Heading */}
