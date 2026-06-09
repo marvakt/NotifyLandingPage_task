@@ -74,21 +74,6 @@ function Navbar({ onHomeClick }) {
 
           {/* Right Actions */}
           <div className="flex items-center gap-3 md:gap-4">
-            <button 
-              onClick={() => setIsLightMode(!isLightMode)}
-              className="hidden md:flex text-gray-400 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors items-center justify-center bg-white/5 light:bg-white light:shadow-sm border border-white/5 light:border-gray-200 rounded-full w-10 h-10"
-              aria-label="Toggle Theme"
-            >
-              {isLightMode ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              )}
-            </button>
             <a href="#login" className={`hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-[12px] text-xs font-bold active:scale-[0.98] transition-all duration-500 shadow-lg ${isLightMode ? 'bg-[#09090B] hover:bg-black' : 'bg-white hover:bg-gray-100'}`} style={{ color: isLightMode ? '#ffffff' : '#09090b' }}>
               Login
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right" aria-hidden="true">
@@ -96,19 +81,37 @@ function Navbar({ onHomeClick }) {
               </svg>
             </a>
 
-            {/* Mobile Menu Toggle */}
-            <button
-              className="md:hidden text-gray-400 light:text-gray-500 hover:text-white light:hover:text-gray-900 p-2"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <div className="flex items-center gap-1 sm:gap-2">
+              <button 
+                onClick={() => setIsLightMode(!isLightMode)}
+                className="flex text-gray-400 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors items-center justify-center bg-white/5 light:bg-white light:shadow-sm border border-white/5 light:border-gray-200 rounded-full w-9 h-9 sm:w-10 sm:h-10"
+                aria-label="Toggle Theme"
+              >
+                {isLightMode ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
                 )}
-              </svg>
-            </button>
+              </button>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                className="md:hidden text-gray-400 light:text-gray-500 hover:text-white light:hover:text-gray-900 p-2"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -175,6 +178,29 @@ function Navbar({ onHomeClick }) {
                   </a>
                 )
               })}
+
+              <div className="w-full h-[1px] bg-white/5 light:bg-gray-200 my-2"></div>
+
+              {/* Login Button */}
+              <a
+                href="#login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between p-3 rounded-[20px] transition-all hover:bg-white/5 light:hover:bg-gray-100 border border-transparent"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-[52px] h-[52px] rounded-2xl flex items-center justify-center bg-white light:bg-[#09090B] text-black light:text-white shadow-lg">
+                    <svg className="w-[22px] h-[22px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                    </svg>
+                  </div>
+                  <span className="font-bold text-[16px] tracking-wide text-white light:text-gray-800">
+                    Login
+                  </span>
+                </div>
+                <svg className="w-5 h-5 mr-1 text-white light:text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
 
             {/* Stay Connected */}

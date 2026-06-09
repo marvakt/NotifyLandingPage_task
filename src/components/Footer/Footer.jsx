@@ -89,9 +89,9 @@ function Footer() {
               </p>
               <div className="flex flex-col gap-3">
                 <div className="flex gap-2">
-                  <div className="flex items-center px-3 py-3 bg-transparent border border-white/10 light:border-gray-200 rounded-[10px] text-[#9F9FA9] light:text-gray-500 text-sm cursor-pointer hover:bg-white/5 light:hover:bg-gray-50 transition-colors whitespace-nowrap">
-                    <span>IN +91</span>
-                    <svg className="w-3 h-3 ml-2 text-[#9F9FA9] light:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="flex items-center justify-between px-3 py-3 bg-transparent border border-white/10 light:border-gray-200 rounded-[10px] text-[#9F9FA9] light:text-gray-500 text-sm cursor-pointer hover:bg-white/5 light:hover:bg-gray-50 transition-colors w-[70px]">
+                    <span className="text-base leading-none">🇮🇳</span>
+                    <svg className="w-3 h-3 text-[#9F9FA9] light:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
@@ -114,18 +114,20 @@ function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-white/10 light:border-gray-200 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0 relative">
-          <p className="text-[#9F9FA9] text-xs text-center md:text-left order-2 md:order-1">
+        <div className="pt-8 pb-4 md:pb-0 border-t border-white/10 light:border-gray-200 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 relative">
+          <p className="text-[#9F9FA9] text-xs text-center md:text-left w-full md:w-auto">
             © 2026 <span className="text-white light:text-gray-900">CODO AI Innovations</span>. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:pr-12 order-1 md:order-2 w-full md:w-auto">
-            <a href="#" className="text-[10px] font-bold uppercase tracking-widest transition-colors hover:opacity-80" style={{ color: '#9F9FA9' }}>Privacy Policy</a>
-            <a href="#" className="text-[10px] font-bold uppercase tracking-widest transition-colors hover:opacity-80" style={{ color: '#9F9FA9' }}>Terms of Service</a>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 md:pr-12 w-full md:w-auto mb-2 md:mb-0">
+            <div className="flex gap-6 justify-center">
+              <a href="#" className="text-[10px] font-bold uppercase tracking-widest transition-colors hover:opacity-80" style={{ color: '#9F9FA9' }}>Privacy Policy</a>
+              <a href="#" className="text-[10px] font-bold uppercase tracking-widest transition-colors hover:opacity-80" style={{ color: '#9F9FA9' }}>Terms of Service</a>
+            </div>
             <a href="#" className="text-[10px] font-bold uppercase tracking-widest transition-colors hover:opacity-80" style={{ color: '#9F9FA9' }}>Refund Policy</a>
           </div>
           <button
             onClick={scrollToTop}
-            className="absolute top-0 md:top-1/2 md:-translate-y-1/2 right-0 w-10 h-10 rounded-xl bg-white/5 light:bg-white border border-white/10 light:border-gray-200 flex items-center justify-center text-[#9F9FA9] light:text-gray-500 hover:text-white light:hover:text-gray-900 hover:bg-white/10 light:hover:bg-gray-50 light:shadow-sm transition-colors"
+            className="absolute right-0 bottom-2 md:top-1/2 md:-translate-y-1/2 md:bottom-auto w-12 h-12 md:w-10 md:h-10 rounded-[14px] md:rounded-xl bg-[#18181B] light:bg-white border border-white/5 light:border-gray-200 flex items-center justify-center text-[#9F9FA9] light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors shadow-lg z-10"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
