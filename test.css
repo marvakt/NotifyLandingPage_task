@@ -1,0 +1,1 @@
+@import "tailwindcss"; @variant myvar (.myvar &); .myvar\:bg-white { background-color: white; }
