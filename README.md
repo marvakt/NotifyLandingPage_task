@@ -13,14 +13,14 @@
 - **Smooth Animations**
 
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Framework**: React.js
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS v4
 - **Hosting**: Vercel
 
-## 💻 Running Locally
+## Running Locally
 
 1. **Clone the repository**
    ```bash
