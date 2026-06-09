@@ -1,18 +1,17 @@
 # Notify Landing Page
 
-A pixel-perfect, fully responsive landing page built with React.js, Tailwind CSS v4, and Vite. This project is a front-end implementation based on a provided reference design, featuring smooth animations, interactive elements, and both Light and Dark mode themes.
 
-## 🚀 Live Demo
+##  Live Demo
 
 [View Live Project](https://notify-landing-page-task.vercel.app/)
 
-## ✨ Features
+##  Features
 
-- **Pixel-Perfect UI**: Precisely matches the reference aesthetics with carefully chosen typography, spacing, and colors.
-- **Fully Responsive**: Optimized layouts for Mobile, Tablet, and Desktop screens.
-- **Light & Dark Mode**: Seamless theme switching with persistent state.
-- **Smooth Animations**: Includes custom CSS keyframe animations, hover effects, and smooth micro-interactions.
-- **High Performance**: Built with Vite and Tailwind CSS v4 for lightning-fast loading and optimized asset delivery.
+- **Pixel-Perfect UI**
+- **Fully Responsive**
+- **Light & Dark Mode**
+- **Smooth Animations**
+
 
 ## 🛠 Tech Stack
 
