@@ -27,18 +27,14 @@ function MainLayout({ children }) {
       {showBanner && (
         <div className="bg-[#1D4ED8] text-white text-[11px] sm:text-xs font-bold py-2.5 px-2 sm:px-4 flex justify-between items-center relative z-[60]">
           <div className="flex-1 hidden md:block"></div>
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 sm:gap-4 w-full md:w-auto justify-center px-6 sm:px-0 pr-8 sm:pr-0">
-            <span className="font-bold tracking-wide text-center">
-              <span className="hidden sm:inline">LAUNCH DISCOUNT: </span>
-              <span className="sm:hidden">LAUNCH: </span>
-              20% OFF
-            </span>
-            <span className="text-white/30 hidden sm:inline">|</span>
-            <span className="font-mono tracking-widest text-white font-bold text-center">
+          <div className="flex flex-row items-center gap-1.5 sm:gap-4 w-full md:w-auto justify-center px-2 sm:px-0 pr-8 sm:pr-0 overflow-hidden">
+            <span className="font-bold tracking-tight text-[8px] sm:text-xs whitespace-nowrap shrink-0">LAUNCH DISCOUNT: 20% OFF</span>
+            <span className="text-white/30 text-[10px] sm:text-xs shrink-0 hidden sm:inline">|</span>
+            <span className="font-mono tracking-widest text-white font-bold text-[8.5px] sm:text-xs whitespace-nowrap shrink-0">
               {days}d {hours}h {minutes}m {seconds}s
             </span>
-            <span className="text-white/30 hidden sm:inline">|</span>
-            <button className="bg-white text-blue-600 px-2 sm:px-3 py-1 rounded-[4px] text-[10px] sm:text-xs font-bold hover:bg-gray-100 transition-colors">
+            <span className="text-white/30 text-[10px] sm:text-xs shrink-0 hidden sm:inline">|</span>
+            <button className="bg-white text-blue-600 px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-[2px] sm:rounded-[4px] text-[8px] sm:text-xs font-bold hover:bg-gray-100 transition-colors whitespace-nowrap shrink-0">
               GET ACCESS
             </button>
           </div>
