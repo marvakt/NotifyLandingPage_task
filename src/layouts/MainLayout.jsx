@@ -16,20 +16,6 @@ function MainLayout({ children }) {
     return () => clearInterval(timer)
   }, [showBanner])
 
-  const [showScrollTop, setShowScrollTop] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400)
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   const days = Math.floor(timeLeft / (24 * 60 * 60))
   const hours = Math.floor((timeLeft % (24 * 60 * 60)) / (60 * 60))
   const minutes = Math.floor((timeLeft % (60 * 60)) / 60)
@@ -41,7 +27,7 @@ function MainLayout({ children }) {
       {showBanner && (
         <div className="bg-[#1D4ED8] text-white text-[11px] sm:text-xs font-bold py-2.5 px-2 sm:px-4 flex justify-between items-center relative z-[60]">
           <div className="flex-1 hidden md:block"></div>
-          <div className="flex flex-row items-center gap-2 sm:gap-4 w-full md:w-auto justify-start sm:justify-center overflow-x-auto whitespace-nowrap px-6 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex flex-row items-center gap-2 sm:gap-4 w-full md:w-auto justify-center overflow-x-auto whitespace-nowrap px-6 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <span className="font-bold tracking-wide shrink-0">LAUNCH DISCOUNT: 20% OFF</span>
             <span className="text-white/30 shrink-0">|</span>
             <span className="font-mono tracking-widest text-white font-bold shrink-0">
@@ -68,19 +54,6 @@ function MainLayout({ children }) {
       <Navbar onHomeClick={() => setShowBanner(true)} />
       <main className="flex-grow flex flex-col">{children}</main>
       <Footer />
-
-      {/* Floating Scroll to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 md:bottom-8 md:right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] z-[100] group ${
-          showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-        }`}
-        aria-label="Scroll to top"
-      >
-        <svg className="w-6 h-6 group-hover:-translate-y-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-        </svg>
-      </button>
     </div>
   )
 }
